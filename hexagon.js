@@ -327,7 +327,8 @@ HexagonGrid.prototype.clickEvent = function (e) {
         var drawy = tile.column % 2 == 0 ? (tile.row * this.height) + this.canvasOriginY + 6 : (tile.row * this.height) + this.canvasOriginY + 6 + (this.height / 2);
         var drawx = (tile.column * this.side) + this.canvasOriginX;
 
-        this.drawHex(drawx, drawy - 6, "rgba(255,0,0,0.3)", "");
+        color = this.getColor(tile.clicks);
+        this.drawHex(drawx, drawy - 6, color, "");
 
          // Get surrounding tiles
          var surroundingTiles = this.getSurroundingTiles(localX, localY);
@@ -337,8 +338,26 @@ HexagonGrid.prototype.clickEvent = function (e) {
                 var drawy = sTile.column % 2 == 0 ? (sTile.row * this.height) + this.canvasOriginY + 6 : (sTile.row * this.height) + this.canvasOriginY + 6 + (this.height / 2);
                 var drawx = (sTile.column * this.side) + this.canvasOriginX;
 
-                this.drawHex(drawx, drawy - 6, "rgba(255,0,0,0.1)", "");
+                this.drawHex(drawx, drawy - 6, "rgba(0,0,0,0.05)", "");
             }
         }
     } 
 };
+
+HexagonGrid.prototype.getColor = function(clicks) {
+    if (clicks === 1) {
+        return "rgba(255,0,0,0.3)";
+    } else if (clicks === 2) {
+        return "rgba(255,165,0,0.3";
+    } else if (clicks === 3) {
+        return "rgba(255,255,0,0.3";
+    } else if (clicks === 4) {
+        return "rgba(0,255,0,0.3";
+    } else if (clicks === 5) {
+        return "rgba(0,0,255,0.3";
+    } else if (clicks === 6) {
+        return "rgba(255,0,255,0.3";
+    } else {
+        // do nothing
+    }
+}
