@@ -103,11 +103,11 @@ body, html {
 <div class="w3-container" id="demo" style="padding-bottom:32px;">
   <div class="w3-content" style="max-width:700px">
     <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">DEMO</span></h5>
-    <p>Use your mouse to click. .... more</p>
-    <div class="w3-left">
+    <p>Want to explore how our interactive grid may respond to your presence? Use your mouse to simulate footsteps across the grid.</p>
+    <div class="w3-center w3-padding-16">
       <canvas id="HexCanvas" width="0" height="0">Sorry, your browser is not supported.</canvas>
     </div>
-    <p><span class="w3-tag">FYI!</span> More explanation here</p>
+    <p><span class="w3-tag">NOTE</span> The script powering this demo is adapted from Robert Reese's Hexagon.js blog post and JavaScript code (<a href="https://robert-reese.squarespace.com/blog/hexagonjs" target="_blank">link</a>).</p>
   </div>
 </div>
 
@@ -145,7 +145,7 @@ function loadDemo() {
     canvas.height = Math.round(window.innerHeight / 2);
 
     var hexagonGrid = new HexagonGrid("HexCanvas", 15);
-    hexagonGrid.drawHexGrid(50, 100, 50, 50, false);
+    hexagonGrid.drawHexGrid(20, 30, 0, 0, false);
 }
 
 </script>

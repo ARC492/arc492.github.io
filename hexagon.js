@@ -292,6 +292,7 @@ HexagonGrid.prototype.getSurroundingTiles = function(mouseX, mouseY) {
     var surroundingTiles = [];
     for (var i = 0; i < pos.length; i++) {
         var hex = this.findHexByID(pos[i].column, pos[i].row);
+        hex.numClicks += 1;
         if (hex !== undefined) {
             surroundingTiles.push({row: hex.idY, column: hex.idX, clicks: hex.numClicks});
         }
@@ -327,7 +328,7 @@ HexagonGrid.prototype.clickEvent = function (e) {
         var drawy = tile.column % 2 == 0 ? (tile.row * this.height) + this.canvasOriginY + 6 : (tile.row * this.height) + this.canvasOriginY + 6 + (this.height / 2);
         var drawx = (tile.column * this.side) + this.canvasOriginX;
 
-        color = this.getColor(tile.clicks);
+        var color = this.getColor(tile.clicks);
         this.drawHex(drawx, drawy - 6, color, "");
 
          // Get surrounding tiles
@@ -345,19 +346,19 @@ HexagonGrid.prototype.clickEvent = function (e) {
 };
 
 HexagonGrid.prototype.getColor = function(clicks) {
-    if (clicks === 1) {
-        return "rgba(255,0,0,0.3)";
-    } else if (clicks === 2) {
-        return "rgba(255,165,0,0.3";
-    } else if (clicks === 3) {
-        return "rgba(255,255,0,0.3";
-    } else if (clicks === 4) {
-        return "rgba(0,255,0,0.3";
-    } else if (clicks === 5) {
-        return "rgba(0,0,255,0.3";
-    } else if (clicks === 6) {
-        return "rgba(255,0,255,0.3";
+    if (clicks % 6 === 1) {
+        return "rgba(255,0,0,0.5)";
+    } else if (clicks % 6 === 2) {
+        return "rgba(255,165,0,0.5";
+    } else if (clicks % 6 === 3) {
+        return "rgba(255,255,0,0.5";
+    } else if (clicks % 6 === 4) {
+        return "rgba(0,255,0,0.5";
+    } else if (clicks % 6 === 5) {
+        return "rgba(0,0,255,0.5";
+    } else if (clicks % 6 === 0) {
+        return "rgba(255,0,255,0.5";
     } else {
         // do nothing
     }
-}
+};
