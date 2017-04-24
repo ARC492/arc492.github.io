@@ -81,7 +81,7 @@ body, html {
 <!-- Plan Container -->
 <div class="w3-container">
   <div class="w3-content" style="max-width:700px">
- 
+
     <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">PROJECT PROPOSAL</span></h5>
 
     <div class="w3-content" style="max-width:700px">
@@ -91,12 +91,20 @@ body, html {
         <p>How to walk from MOCA to river and back</p>
         <p class="w3-padding-16"><span class="w3-tag">Museum</span></p>
         <p>Audio from museum, screens</p>
-        <img src="indoor_museum_screen.jpg" style="width:100%;max-width:1000px;margin-top:32px;">
-        <img src="outdoor_museum_screen.jpg" style="width:100%;max-width:1000px;margin-top:32px;">
+        <img src="indoor_museum_screen.jpg" style="width:100%;max-width:1000px;margin-top:32px;" onclick="expandImg(this)" class="w3-hover-opacity">
+        <img src="outdoor_museum_screen.jpg" style="width:100%;max-width:1000px;margin-top:32px;" onclick="expandImg(this)" class="w3-hover-opacity">
+        <img src="long_screen.png" style="width:100%;max-width:1000px;margin-top:32px;" onclick="expandImg(this)" class="w3-hover-opacity">
         <p class="w3-padding-16"><span class="w3-tag">River</span></p>
+        <img src="arc1.png" style="width:100%;max-width:1000px;margin-top:32px;" onclick="expandImg(this)" class="w3-hover-opacity">
+        <img src="arc2.png" style="width:100%;max-width:1000px;margin-top:32px;" onclick="expandImg(this)" class="w3-hover-opacity">
         <p><span class="w3-tag">FYI!</span> Can include images, architectural plans, etc. here</p>
-    </div>  
+    </div>
   </div>
+</div>
+
+<!-- Image modal -->
+<div id="img_modal" class="w3-center w3-modal w3-animate-zoom" onclick="this.style.display='none'">
+  <img class="w3-modal-content" id="img" style="width:85%;">
 </div>
 
 <!-- Contact/Area Container -->
@@ -148,6 +156,11 @@ function loadDemo() {
     hexagonGrid.drawHexGrid(20, 30, 0, 0, false);
 }
 
+function expandImg(element) {
+    document.getElementById('img').src = element.src;
+    document.getElementById('img_modal').style.display='block';
+}
+
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtxVnGfqE8YRYAF-qZRaIodbAL22TIXK8&callback=myMap"></script>
@@ -155,6 +168,7 @@ function loadDemo() {
 Google Maps API key is associated with lindy@princeton.edu.
 -->
 <script src="hexagon.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </body>
 </html>
