@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<title>ARC 492 Final Project</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+<style>
+body, html {
+    height: 100%;
+    font-family: "Inconsolata", sans-serif;
+}
+</style>
+
+<body onload="loadDemo()">
+
+<!-- Links (sit on top) -->
+<div class="w3-top">
+  <div class="w3-row w3-padding w3-black">
+    <div class="w3-col s3">
+      <a href="index.html" class="w3-button w3-block w3-black">HOME</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="about.html" class="w3-button w3-block w3-black">ABOUT</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="proposal.html" class="w3-button w3-block w3-black">PROPOSAL</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="demo.html" class="w3-button w3-block w3-black">DEMO</a>
+    </div>
+  </div>
+</div>
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-light-gray w3-large">
+
+<!-- Contact/Area Container -->
+<div class="w3-container" id="demo" style="padding-bottom:32px;">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">DEMO</span></h5>
+    <p>Want to explore how our interactive grid may respond to your presence? Use your mouse to simulate footsteps across the grid.</p>
+    <div class="w3-center w3-padding-16">
+      <canvas id="HexCanvas" width="0" height="0">Sorry, your browser is not supported.</canvas>
+    </div>
+    <p><span class="w3-tag">NOTE</span> The script powering this demo is adapted from Robert Reese's Hexagon.js blog post and JavaScript code (<a href="https://robert-reese.squarespace.com/blog/hexagonjs" target="_blank">link</a>).</p>
+  </div>
+</div>
+
+</div>
+
+<script>
+// Demo hexagon grid
+function loadDemo() {
+    // now use this as width and height for your canvas element:
+    var canvas = document.getElementById('HexCanvas');
+
+    canvas.width = Math.round(window.innerWidth / 2);
+    canvas.height = Math.round(window.innerHeight / 2);
+
+    var hexagonGrid = new HexagonGrid("HexCanvas", 15);
+    hexagonGrid.drawHexGrid(20, 30, 0, 0, false);
+}
+</script>
+<script src="hexagon.js"></script>
+</body>
+</html>

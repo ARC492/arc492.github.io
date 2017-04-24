@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<title>ARC 492 Final Project</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+<style>
+body, html {
+    height: 100%;
+    font-family: "Inconsolata", sans-serif;
+}
+</style>
+
+<body>
+
+<!-- Links (sit on top) -->
+<div class="w3-top">
+  <div class="w3-row w3-padding w3-black">
+    <div class="w3-col s3">
+      <a href="index.html" class="w3-button w3-block w3-black">HOME</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="about.html" class="w3-button w3-block w3-black">ABOUT</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="proposal.html" class="w3-button w3-block w3-black">PROPOSAL</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="demo.html" class="w3-button w3-block w3-black">DEMO</a>
+    </div>
+  </div>
+</div>
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-light-gray w3-large">
+
+<!-- Plan Container -->
+<div class="w3-container">
+  <div class="w3-content" style="max-width:700px">
+
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">PROJECT PROPOSAL</span></h5>
+
+    <div class="w3-content" style="max-width:700px">
+        <p class="w3-padding-16"><span class="w3-tag">Location</span></p>
+        <p> Find us at MOCA </p>
+        <div id="googleMap" style="width:100%;height:400px;"></div>
+        <p>How to walk from MOCA to river and back</p>
+        <p class="w3-padding-16"><span class="w3-tag">Museum</span></p>
+        <p>Audio from museum, screens</p>
+        <img src="indoor_museum_screen.jpg" style="width:100%;max-width:1000px;margin-top:32px;" onclick="expandImg(this)" class="w3-hover-opacity">
+        <img src="outdoor_museum_screen.jpg" style="width:100%;max-width:1000px;margin-top:32px;" onclick="expandImg(this)" class="w3-hover-opacity">
+        <img src="long_screen.png" style="width:100%;max-width:1000px;margin-top:32px;" onclick="expandImg(this)" class="w3-hover-opacity">
+        <p class="w3-padding-16"><span class="w3-tag">River</span></p>
+        <img src="arc1.png" style="width:100%;max-width:1000px;margin-top:32px;" onclick="expandImg(this)" class="w3-hover-opacity">
+        <img src="arc2.png" style="width:100%;max-width:1000px;margin-top:32px;" onclick="expandImg(this)" class="w3-hover-opacity">
+        <p><span class="w3-tag">FYI!</span> Can include images, architectural plans, etc. here</p>
+    </div>
+  </div>
+</div>
+
+<!-- Image modal -->
+<div id="img_modal" class="w3-center w3-modal w3-animate-zoom" onclick="this.style.display='none'">
+  <img class="w3-modal-content" id="img" style="width:85%;">
+</div>
+
+</div>
+
+<script>
+  function myMap() {
+  myCenter=new google.maps.LatLng(34.0532736,-118.2526209);
+  var mapOptions= {
+    center:myCenter,
+    zoom:13, scrollwheel: false, draggable: false,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
+
+  var marker = new google.maps.Marker({
+    position: myCenter,
+  });
+  marker.setMap(map);
+}
+
+function expandImg(element) {
+    document.getElementById('img').src = element.src;
+    document.getElementById('img_modal').style.display='block';
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtxVnGfqE8YRYAF-qZRaIodbAL22TIXK8&callback=myMap"></script>
+<!--
+Google Maps API key is associated with lindy@princeton.edu.
+-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</body>
+</html>
