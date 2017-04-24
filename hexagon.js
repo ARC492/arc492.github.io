@@ -60,7 +60,7 @@ HexagonGrid.prototype.drawHexGrid = function (rows, cols, originX, originY, isDe
                 debugText = col + "," + row;
             }
 
-            this.drawHex(currentHexX, currentHexY, "#fff", debugText);
+            this.drawHex(currentHexX, currentHexY, "#bfbfff", debugText);
         }
         offsetColumn = !offsetColumn;
     }
