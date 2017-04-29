@@ -60,7 +60,7 @@ HexagonGrid.prototype.drawHexGrid = function (rows, cols, originX, originY, isDe
                 debugText = col + "," + row;
             }
 
-            this.drawHex(currentHexX, currentHexY, "#bfbfff", debugText);
+            this.drawHex(currentHexX, currentHexY, "rgba(49,71,87,1)", debugText);
         }
         offsetColumn = !offsetColumn;
     }
@@ -339,7 +339,9 @@ HexagonGrid.prototype.clickEvent = function (e) {
                 var drawy = sTile.column % 2 == 0 ? (sTile.row * this.height) + this.canvasOriginY + 6 : (sTile.row * this.height) + this.canvasOriginY + 6 + (this.height / 2);
                 var drawx = (sTile.column * this.side) + this.canvasOriginX;
 
-                this.drawHex(drawx, drawy - 6, "rgba(0,0,0,0.05)", "");
+                this.drawHex(drawx, drawy-6, "#000", ""); //#bfbfff
+                var sColor = this.get_sColor(sTile.clicks);
+                this.drawHex(drawx, drawy - 6, sColor, "");
             }
         }
     } 
@@ -347,17 +349,35 @@ HexagonGrid.prototype.clickEvent = function (e) {
 
 HexagonGrid.prototype.getColor = function(clicks) {
     if (clicks % 6 === 1) {
-        return "rgba(255,0,0,0.5)";
+        return "rgba(203,47,112,1)";
     } else if (clicks % 6 === 2) {
-        return "rgba(255,165,0,0.5";
+        return "rgba(97,194,161,1)";
     } else if (clicks % 6 === 3) {
-        return "rgba(255,255,0,0.5";
+        return "rgba(143,57,118,1)";
     } else if (clicks % 6 === 4) {
-        return "rgba(0,255,0,0.5";
+        return "rgba(0,129,187,1)";
     } else if (clicks % 6 === 5) {
-        return "rgba(0,0,255,0.5";
+        return "rgba(251,114,104,1)";
     } else if (clicks % 6 === 0) {
-        return "rgba(255,0,255,0.5";
+        return "rgba(249,231,45,1)";
+    } else {
+        // do nothing
+    }
+};
+
+HexagonGrid.prototype.get_sColor = function(clicks) {
+    if (clicks % 6 === 1) {
+        return "rgba(92,228,240,1)";
+    } else if (clicks % 6 === 2) {
+        return "rgba(30,95,186,1)";
+    } else if (clicks % 6 === 3) {
+        return "rgba(130,69,118,1)";
+    } else if (clicks % 6 === 4) {
+        return "rgba(254,76,70,1)";
+    } else if (clicks % 6 === 5) {
+        return "rgba(254,210,60,1)";
+    } else if (clicks % 6 === 0) {
+        return "rgba(239,193,230,1)";
     } else {
         // do nothing
     }
