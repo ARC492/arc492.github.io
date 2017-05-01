@@ -51,8 +51,16 @@ body, html {
         </div>
         <p>Our proposed intervention is an interactive grid screen, tiled at the basin of the LA River between East 1st and East 4th Street and connected to an installation at the Museum of Contemporary Art (MOCA). At the river, the tile screen collects applied pressure input from human interaction such as footsteps, as well as environmental changes such as rain and flooding. These changes at the river are registered in a MOCA exhibition that updates in real time, changing color depending on the pressure input at the river. For example, if the sensors detect weight that water creates, the tile grid turns blue. These distinct water-generated pressures, are unique in LA’s usually dry landscape, and stand in juxtaposition to the usually colorful tiles, highlighting the importance and necessity of water in the city. The tile screen stretches between 1st and 4th Street with a length of half a mile, and at both ends of the river are two stages with seating, serving as public spaces for people to gather. The two stages also serve as confluence points for visitors traversing the length of the tile grid.</p>
         <div class="w3-panel w3-leftbar w3-light-grey">
-          <img src="arc1.png" style="width:100%;max-width:1000px;margin-top:32px;" onclick="expandImg(this)" class="w3-hover-opacity">
-          <img src="arc2.png" style="width:100%;max-width:1000px;margin-top:32px;" onclick="expandImg(this)" class="w3-hover-opacity">
+          <div class="w3-content w3-display-container">
+            <img class="mySlides w3-hover-opacity" src="RenderNorth.jpg" style="width:100%;max-width:1000px;margin-top:32px;" onclick="expandImg(this)">
+            <img class="mySlides w3-hover-opacity" src="RenderNorthLow.jpg" style="width:100%;max-width:1000px;margin-top:32px;" onclick="expandImg(this)">
+            <img class="mySlides w3-hover-opacity" src="RenderSouth.jpg" style="width:100%;max-width:1000px;margin-top:32px;" onclick="expandImg(this)">
+            <img class="mySlides w3-hover-opacity" src="RenderSouthCloseUp.jpg" style="width:100%;max-width:1000px;margin-top:32px;" onclick="expandImg(this)">
+            <img class="mySlides w3-hover-opacity" src="RenderSouthLow.jpg" style="width:100%;max-width:1000px;margin-top:32px;" onclick="expandImg(this)">
+
+            <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+          </div>
         </div>
         <p>The museum display that registers the pressure inputs is an immersive “screen" that is curves across each exhibition wall. Viewers are encouraged to move through the exhibition to see the whole—the spatial design changes the viewer’s relationship to the artwork, and by extension, the river. The infrastructure of the river can be translated into a dynamic exhibition space, where the spatial design more accurately describes a vision of the river that is moving, free-flowing, and flexible. Mirroring the setup of the two stages at the river, the museum exhibition layout includes two rooms which serve as endpoints for people to gather.</p>
         <p>The museum exhibition continues to mirror the river grid screen; just as pressure input at the river translates into visual display at the museum, sound input collected at the museum is relayed to the river. Microphones in the center of each room capture voices from the museum which will play in real time at the river. This layered soundscape, constructed from both voices and ambient noise from the museum, is collaborative and constantly changing. At the river, the visitor’s experience of the river is superimposed with sounds from the museum, creating an immersive sonic experience and suggesting an intricate connection between the city, its people and the river.</p>
@@ -92,6 +100,24 @@ body, html {
 function expandImg(element) {
     document.getElementById('img').src = element.src;
     document.getElementById('img_modal').style.display='block';
+}
+
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
 }
 </script>
 
