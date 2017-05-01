@@ -9,22 +9,9 @@
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 
 <style>
-/*body, html {
-    height: 100%;
-    font-family: "Inconsolata", sans-serif;
-} */
-/*.bgimg {
-    background-position: center;
-    background-size: cover;
-    background-image: url("/w3images/coffeehouse.jpg");
-    min-height: 100%;
-}*/
-
 body{
   font-family: 'Inconsolata', sans-serif;
   background:rgb(0, 0, 0);
-  padding:50px;
-
 }
 *{
   margin:0;
@@ -142,15 +129,12 @@ body{
   top:50%;
   padding-top:10%;
 }
-#title{
-  font-size: 50px;
-}
 </style>
 
 <body>
 
-<!-- Links (sit on top) -->
-<!--<div class="w3-top">
+<!-- Small size -->
+<div class="w3-top w3-hide-large">
   <div class="w3-row w3-padding w3-black">
     <div class="w3-col s3">
       <a href="index.html" class="w3-button w3-block w3-black">HOME</a>
@@ -165,132 +149,58 @@ body{
       <a href="demo.html" class="w3-button w3-block w3-black">DEMO</a>
     </div>
   </div>
-</div>-->
+</div>
 
-<!-- Header with image -->
-<!--<div class="bgimg w3-display-container w3-grayscale-min" id="home">
-  <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
-    <span class="w3-tag">Coming in Spring 2018!</span>
-  </div>
-  <div class="w3-display-middle w3-center">
-    <span class="w3-text-black" style="font-size:90px">River<br>Dancing<br></span>
-    <span class="w3-text-gray" style="font-size:20px">A Collaboration with Los Angeles Museum of Contemporary Art</span>
-  </div>
-  <div class="w3-display-bottomright w3-center w3-padding-large">
-    <span class="w3-text-black">Kathleen Ma, Matthew Maldonado, Lindy Zeng <br> ARC 492 Spring 2017</span>
-  </div>
-</div>-->
+<div class="w3-hide-large">
+    <div class="w3-display-middle w3-center">
+      <span class="w3-text-white w3-padding-64" style="font-size:50px">Riversense</span><br>
+      <span class="w3-text-white" style="font-size:20px">A Collaboration with the Los Angeles Museum of Contemporary Art</span>
+    </div>
+    <div class="w3-display-bottomright w3-center w3-padding-large">
+      <span class="w3-text-white">Kathleen Ma, Matthew Maldonado, Lindy Zeng <br> ARC 492 Spring 2017</span>
+    </div>
+</div>
 
-<ul id="categories" class="clr">
-  <li class="pusher"></li>
-  <li onclick="location.href='about.html'">
-      <div>
-        <img class="w3-grayscale" src="river1.jpg" alt=""/>
-        <h1>About</h1>
-        <p>Learn about this exhibition</p>
-    </div>
-  </li>
-    <li onclick="location.href='proposal.html'">
-      <div>
-        <img class="w3-grayscale" src="city1.jpg" alt=""/>
-        <h1>Proposal</h1>
-        <p>View the details behind this exhibition</p>
-    </div>
-  </li>
-  <li>
-      <div onclick="location.href='demo.html'">
-        <img class="w3-grayscale" src="city2.jpg" alt=""/>
-        <h1>Demo</h1>
-        <p>Interact with an online demonstration</p>
-    </div>
-  </li>
-  <li>
-      <div>
-        <img class="w3-grayscale" src="river2.jpg" alt=""/>
-        <h1>Coming soon in Spring 2018!</h1>
-        <p>Kathleen Ma, Matthew Maldonado, and Lindy Zeng (ARC 492 Spring 2017)</p>
-    </div>
-  </li>
+<!-- Large size -->
+<div class="w3-hide-small w3-hide-medium w3-padding-16">
+  <div class="w3-container">
+    <ul id="categories" class="clr">
+      <li class="pusher"></li>
+      <li onclick="location.href='about.html'">
+          <div>
+            <img class="w3-grayscale" src="river1.jpg" alt=""/>
+            <h1>About</h1>
+            <p>Learn about this exhibition</p>
+        </div>
+      </li>
+        <li onclick="location.href='proposal.html'">
+          <div>
+            <img class="w3-grayscale" src="city1.jpg" alt=""/>
+            <h1>Proposal</h1>
+            <p>View the details behind this exhibition</p>
+        </div>
+      </li>
+      <li>
+          <div onclick="location.href='demo.html'">
+            <img class="w3-grayscale" src="city2.jpg" alt=""/>
+            <h1>Demo</h1>
+            <p>Interact with an online demonstration</p>
+        </div>
+      </li>
+      <li>
+          <div>
+            <img class="w3-grayscale" src="river2.jpg" alt=""/>
+            <h1>Coming soon in Spring 2018!</h1>
+            <p>Kathleen Ma, Matthew Maldonado, and Lindy Zeng (ARC 492 Spring 2017)</p>
+        </div>
+      </li>
+    </ul>
+  </div>
 
-  <!--
-  <li>
-      <div>
-        <img src="https://farm7.staticflickr.com/6083/6055581292_d94c2d90e3.jpg" alt=""/>
-        <h1>This is a title</h1>
-        <p>Some sample text about the article this hexagon leads to</p>
-    </div>
-  </li>
-  <li class="pusher"></li>
-  <li>
-      <div>
-        <img src="https://farm7.staticflickr.com/6092/6227418584_d5883b0948.jpg" alt=""/>
-        <h1>This is a title</h1>
-        <p>Some sample text about the article this hexagon leads to</p>
-    </div>
-  </li>
-  <li>
-      <div>
-        <img src="https://farm8.staticflickr.com/7187/6895047173_d4b1a0d798.jpg" alt=""/>
-        <h1>This is a title</h1>
-        <p>Some sample text about the article this hexagon leads to</p>
-    </div>
-  </li><li>
-      <div>
-        <img src="https://farm4.staticflickr.com/3766/12953056854_b8cdf14f21.jpg" alt=""/>
-        <h1>This is a title</h1>
-        <p>Some sample text about the article this hexagon leads to</p>
-    </div>
-  </li>
-  <li>
-      <div>
-        <img src="https://farm7.staticflickr.com/6139/5986939269_10721b8017.jpg" alt=""/>
-        <h1>This is a title</h1>
-        <p>Some sample text about the article this hexagon leads to</p>
-    </div>
-  </li>
-  <li>
-      <div>
-        <img src="https://farm4.staticflickr.com/3165/5733278274_2626612c70.jpg" alt=""/>
-        <h1>This is a title</h1>
-        <p>Some sample text about the article this hexagon leads to</p>
-    </div>
-  </li>
-  <li class="pusher"></li>
-  <li class="pusher"></li>
-  <li>
-      <div>
-        <img src="https://farm8.staticflickr.com/7163/6822904141_50277565c3.jpg" alt=""/>
-        <h1>This is a title</h1>
-        <p>Some sample text about the article this hexagon leads to</p>
-    </div>
-  </li>
-  <li class="pusher"></li>
-  <li>
-      <div>
-        <img src="https://farm4.staticflickr.com/3771/13199704015_72aa535bd7.jpg" alt=""/>
-        <h1>This is a title</h1>
-        <p>Some sample text about the article this hexagon leads to</p>
-    </div>
-  </li>
-  <li>
-      <div>
-        <img src="https://farm7.staticflickr.com/6083/6055581292_d94c2d90e3.jpg" alt=""/>
-        <h1>This is a title</h1>
-        <p>Some sample text about the article this hexagon leads to</p>
-    </div>
-  </li>
-  <li>
-      <div>
-        <img src="https://farm8.staticflickr.com/7187/6895047173_d4b1a0d798.jpg" alt=""/>
-        <h1>This is a title</h1>
-        <p>Some sample text about the article this hexagon leads to</p>
-    </div>
-  </li>
-  <li class="pusher"></li>-->
-</ul>
-<div class="w3-top w3-text-white">
-  <div id="title">Riversense</div>
-  <div>A Collaboration with the Los Angeles Museum of Contemporary Art</div>
+  <div class="w3-text-white w3-container w3-top w3-padding-16">
+    <span style="font-size:70px;">Riversense</span><br>
+    <span>A Collaboration with the <br> Los Angeles Museum of Contemporary Art</span>
+  </div>
 </div>
 
 </body>
