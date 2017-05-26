@@ -2,4 +2,4 @@
 ## Final Project
 Lindy Zeng, Kathleen Ma, Matthew Maldonado
 
-[Project website] (arc492.github.io)
+Project website [arc492.github.io]
